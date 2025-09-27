@@ -1,0 +1,16 @@
+<launch>
+    <!-- 加载机器人模型描述参数 -->
+    <param name="robot_description" textfile="$(find car_description)/urdf/car.urdf" />
+    
+    <!-- 关节状态发布器节点 -->
+    <node name="joint_state_publisher" 
+          pkg="joint_state_publisher" 
+          type="joint_state_publisher" />
+    
+    <!-- 机器人状态发布器节点 -->
+    <node name="robot_state_publisher" 
+          pkg="robot_state_publisher" 
+          type="robot_state_publisher" />
+
+</launch>
+

@@ -1,0 +1,18 @@
+<launch>
+  <!-- 启动手柄节点 -->
+  <node pkg="joy" name="joy_node" type="joy_node" output="screen">
+  </node>
+
+  <!-- 小车底盘 -->
+  <include file="$(find ros_arduino_python)/launch/arduino.launch">
+  </include>
+
+  <!-- 激光雷达的launch文件 -->
+  <include file="$(find ldlidar_sl_ros)/launch/ld14.launch" />
+    <include file="$(find car_description)/launch/car.launch" />
+
+  <!-- 启动rviz -->
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find car_start)/config/car_config.rviz" output="screen">
+  </node> -->
+
+</launch>

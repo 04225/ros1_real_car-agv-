@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="Xboxcontrol" type="Xboxcontrol" name="Xboxcontrol" output="screen"/>
+
+</launch>

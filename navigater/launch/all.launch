@@ -1,0 +1,12 @@
+<launch>
+    <include file="$(find car_start)/launch/strat.launch"/>
+
+    
+    <arg name="map" default="nav.yaml" />
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find navigater)/map/$(arg map)"/>
+    <include file="$(find navigater)/launch/amcl.launch" />
+    <include file="$(find navigater)/launch/move_base.launch" />
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigater)/config/car_gmapping.rviz" output="screen">
+    </node>
+</launch>

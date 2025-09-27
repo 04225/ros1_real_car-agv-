@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="ws2812b" type="led_pub" name="led_pub" output="screen"/>
+    <node pkg="ws2812b" type="led_sub" name="led_sub" output="screen"/>
+    <include file="$(find Xboxcontrol)/launch/joy.launch"/>
+
+</launch>
